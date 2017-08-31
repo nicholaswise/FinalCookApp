@@ -17,5 +17,8 @@ namespace CookingSite.Models
         public int FavoriteID { get; set; }
         public int TermID { get; set; }
         public string Id { get; set; }
+    
+        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual Term Term { get; set; }
     }
 }

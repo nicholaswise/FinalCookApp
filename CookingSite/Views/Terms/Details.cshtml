@@ -1,0 +1,66 @@
+﻿@model CookingSite.Models.Term
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Term</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TermName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermDef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermDef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TermVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TermVideo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMatch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMatch)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TermID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

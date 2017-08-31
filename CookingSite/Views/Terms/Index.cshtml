@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CookingSite.Models.Term>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TermName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermDef)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermPicture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermVideo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMatch)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermDef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermPicture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermVideo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMatch)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TermID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TermID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TermID })
+        </td>
+    </tr>
+}
+
+</table>

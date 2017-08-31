@@ -14,6 +14,12 @@ namespace CookingSite.Models
     
     public partial class Term
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Term()
+        {
+            this.Favorites = new HashSet<Favorite>();
+        }
+    
         public int TermID { get; set; }
         public string TermName { get; set; }
         public string TermDef { get; set; }
@@ -21,5 +27,8 @@ namespace CookingSite.Models
         public string TermPicture { get; set; }
         public string TermVideo { get; set; }
         public Nullable<bool> IsMatch { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Favorite> Favorites { get; set; }
     }
 }
