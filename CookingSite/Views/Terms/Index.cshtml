@@ -5,8 +5,43 @@
 }
 
 <h2>Index</h2>
-<p>Test</p>
 
+<script>
+
+   $(function () {
+        var $inputText = $('#inputText')
+
+       $('#sendFile').on('click', function () {
+            alert('creating object')
+            var postFile = {
+                userInput: $inputText.val(),
+            };
+            $.ajax({
+                type: 'POST',
+                url: "@Url.Action("GetKey")",
+                data: JSON.stringify(postFile),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) { alert(data); },
+                error: function () {
+                    alert("error saving input");
+                }
+            });
+        });
+    });
+
+
+
+</script>
+<div class="container">
+    <div class="col-md-4">
+        <h1>Upload Recipe</h1>
+        <input type="text" id="inputText" />
+        <button id="sendFile">Check Your Recipe</button>
+    </div>
+</div>
+<div class="col-md-4" id="UploadedFile">
+    
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

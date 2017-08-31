@@ -7,12 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CookingSite.Models;
+using Newtonsoft.Json;
 
 namespace CookingSite.Controllers
 {
     public class TermsController : Controller
     {
         private CookingSiteDBEntities db = new CookingSiteDBEntities();
+        public string userInput { get; set; }
+
 
         // GET: Terms
         public ActionResult Index()
@@ -122,6 +125,66 @@ namespace CookingSite.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost]
+
+        public JsonResult GetKey(TermsController term)
+        {
+            string outPut = term.userInput;
+            var outPut1 = "";
+            if (ModelState.IsValid)
+            {
+                string[] keyArr = db.Terms.Select(x => x.TermName).ToArray();
+
+                var relaceQuery =
+                            from key in db.Terms
+                            where key.IsMatch == true
+                            select key;
+
+
+                foreach (Term key in relaceQuery)
+                {
+                    if (key.IsMatch == true)
+                    {
+                        key.IsMatch = false;
+                    }
+
+                }
+                db.SaveChanges();
+
+                for (int j = 0; j < keyArr.Length; j++)
+                {
+                    outPut1 = keyArr[j];
+                }
+                string[] wordArr = outPut.Split(' ');
+
+                for (int i = 0; i < wordArr.Length; i++)
+                {
+                    var tempWord = wordArr[i];
+
+                    if (keyArr.Contains(tempWord))
+                    {
+                        var query =
+                            from key in db.Terms
+                            where key.TermName == tempWord
+                            select key;
+
+
+                        foreach (Term key in query)
+                        {
+                            if (key.IsMatch == null || key.IsMatch == false)
+                            {
+                                key.IsMatch = true;
+                            }
+
+                        }
+
+                    }
+                }
+                db.SaveChanges();
+            }
+            return new JsonResult() { Data = JsonConvert.SerializeObject(outPut1), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
         }
     }
 }
