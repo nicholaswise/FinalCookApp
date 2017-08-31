@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d412a6190d614a57bcfae2ac6aaad6b3" Name="Diagram1">
+        <EntityTypeShape EntityType="CookingSiteDBModel.Favorite" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.Term" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.C__MigrationHistory" Width="1.625" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.AspNetRole" Width="1.625" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.AspNetUserClaim" Width="1.625" PointX="5.25" PointY="7.625" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.AspNetUserLogin" Width="1.625" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="CookingSiteDBModel.AspNetUser" Width="1.625" PointX="3" PointY="5.375" />
+        <AssociationConnector Association="CookingSiteDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CookingSiteDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="CookingSiteDBModel.AspNetUserRoles" />
+        <AssociationConnector Association="CookingSiteDBModel.FK_Favorites_AspNetUsers" />
+        <AssociationConnector Association="CookingSiteDBModel.FK_Favorites_Terms" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
