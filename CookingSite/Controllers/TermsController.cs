@@ -133,7 +133,7 @@ namespace CookingSite.Controllers
 
         public JsonResult GetKey(TermsController term)
         {
-            string outPut = UppercaseFirst(term.userInput);
+            string outPut = term.userInput;
             var outPut1 = "";
             if (ModelState.IsValid)
             {
@@ -160,7 +160,12 @@ namespace CookingSite.Controllers
                     outPut1 = keyArr[j];
                 }
                 string[] wordArr = outPut.Split(' ');
-
+                for (int i = 0; i < wordArr.Length; i++)
+                {
+                    var tempword = wordArr[i];
+                    wordArr[i] = UppercaseFirst(tempword);  
+                }
+               
                 for (int i = 0; i < wordArr.Length; i++)
                 {
                     var tempWord = wordArr[i];
