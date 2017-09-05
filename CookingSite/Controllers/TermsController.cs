@@ -133,7 +133,7 @@ namespace CookingSite.Controllers
 
         public JsonResult GetKey(TermsController term)
         {
-            string outPut = term.userInput;
+            string outPut = UppercaseFirst(term.userInput);
             var outPut1 = "";
             if (ModelState.IsValid)
             {
@@ -238,6 +238,16 @@ namespace CookingSite.Controllers
             db.SaveChanges();
 
             return new JsonResult() { Data = JsonConvert.SerializeObject(output2), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+        static string UppercaseFirst(string outPut)
+        {
+            // Check for empty string.
+            if (string.IsNullOrEmpty(outPut))
+            {
+                return string.Empty;
+            }
+            // Return char and concat substring.
+            return char.ToUpper(outPut[0]) + outPut.Substring(1);
         }
     }
 }

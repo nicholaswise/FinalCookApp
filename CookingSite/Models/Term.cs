@@ -27,6 +27,7 @@ namespace CookingSite.Models
         public string TermPicture { get; set; }
         public string TermVideo { get; set; }
         public Nullable<bool> IsMatch { get; set; }
+        public Nullable<bool> IsLiked { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favorite> Favorites { get; set; }
