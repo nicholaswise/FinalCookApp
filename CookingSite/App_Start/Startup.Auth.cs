@@ -50,19 +50,19 @@ namespace CookingSite
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+              consumerKey: "CcH6ypM8Y9lm6v7M2LB1Slz5V",
+              consumerSecret: "QGd1h8GJvfcFx0jkdAVXgGnF4c1kk87IUzjPMrgbsKK7ydEOBA");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "908734985943180",
+              appSecret: "e5d35ade730ccc7db7d62d252491e4a7");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "794158029305-ild06ldse283djrilutnn0cv7br29cds.apps.googleusercontent.com",
+                ClientSecret = "FSrhlyM2qRrGXktlNpQIC03d"
+            });
         }
     }
 }

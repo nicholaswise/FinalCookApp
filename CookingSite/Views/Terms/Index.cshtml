@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<CookingSite.Models.Term>
+@using Microsoft.AspNet.Identity;
+
+
+
 
 @{
     ViewBag.Title = "Index";
@@ -28,8 +32,47 @@
             });
         });
     });
+</script>
+
+<script>
+    var userInput1 = " ";
+    var aspId;
+
+        function AssignButtonClicked(elem) {
+            userInput1 = $(elem).data('assigned-id');
+            aspId = "@HttpContext.Current.User.Identity.GetUserId()";
 
 
+        };
+
+    $(document).ready(function () {
+
+        $('.SetFavBtn').click(function () {
+
+                
+                alert(userInput1)
+                alert(aspId)
+                var postFile = {
+                    userInput1: userInput1,
+                    aspId: aspId
+                }
+                var postFile1 = {
+                    aspId: aspId
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: "@Url.Action("SavFav")",
+                    data: JSON.stringify(postFile),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) { alert(data); },
+                    error: function () {
+                        alert("error saving input");
+                    }
+                });
+
+            });
+        });
 
 </script>
 <div class="container">
@@ -68,32 +111,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TermName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TermDef)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TermInfo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TermPicture)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TermVideo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsMatch)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TermID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TermID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TermID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        if (item.IsMatch.Equals(true))
+        {
 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TermDef )
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TermInfo )
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TermVideo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TermPicture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TermName)
+                </td>
+                <td>
+                    <div class="SetFav">
+                        <input class="SetFavBtn" type="button" value="Assign" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID" />
+                    </div>
+
+                </td>
+            </tr>
+        }
+    }
 </table>

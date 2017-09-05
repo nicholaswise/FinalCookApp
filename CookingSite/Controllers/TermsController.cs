@@ -15,6 +15,9 @@ namespace CookingSite.Controllers
     {
         private CookingSiteDBEntities db = new CookingSiteDBEntities();
         public string userInput { get; set; }
+        public int userInput1 { get; set; }
+        public string aspId { get; set; }
+        public int ctr = 1;
 
 
         // GET: Terms
@@ -184,7 +187,57 @@ namespace CookingSite.Controllers
                 db.SaveChanges();
             }
             return new JsonResult() { Data = JsonConvert.SerializeObject(outPut1), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+        [HttpPost]
 
+        public JsonResult SavFav(TermsController term)
+        {
+            int output = term.userInput1;
+            string output2 = term.aspId;
+            var resetQuery =
+                           from key in db.Terms
+                           select key;
+
+
+            foreach (Term key in resetQuery)
+            {
+                if (key.IsLiked == true || key.IsLiked == null)
+                {
+                    key.IsLiked = false;
+                }
+            }
+            var setQuery =
+                          from key in db.Terms
+                          where key.TermID == output
+                          select key;
+
+
+            foreach (Term key in setQuery)
+            {
+                if (key.IsLiked == false || key.IsLiked == null)
+                {
+                    key.IsLiked = true;
+                }
+            }
+
+            db.SaveChanges();
+
+            int tempfav = term.ctr++;
+
+            int tempTerm = term.userInput1;
+            string tempId = term.aspId;
+            Favorite fav = new Favorite
+            {
+                FavoriteID = tempfav,
+                TermID = tempTerm,
+                Id = tempId
+            };
+
+            // Add the new object to the Orders collection.
+            db.Favorites.Add(fav);
+            db.SaveChanges();
+
+            return new JsonResult() { Data = JsonConvert.SerializeObject(output2), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
     }
 }
