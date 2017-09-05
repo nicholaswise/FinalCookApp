@@ -1,6 +1,18 @@
-﻿body {
+﻿@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Roboto");
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/toa-heftiba-134256.jpg');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    text-decoration-color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +33,58 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+ 
+
+.navbar-inverse {
+    background-color: transparent !important;
+    border: none;
+}
+
+.navbar-brand {
+    font-family: 'Abril Fatface', cursive;
+    color: white !important;
+    font-size: 3em;
+}
+a#registerLink {
+    color: white;
+}
+a#loginLink {
+    color: white;
+}
+.autoExpand {
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    opacity: 0.2;
+    position: relative;
+    min-width: 75%;
+    /*padding-top: 200px;*/
+    margin-top: 200px;
+}
+
+
+/*h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}*/
+#findButton {
+    background: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: 2px solid white;
+    padding: 10px;
+    position:center;
+}
+#findButton:hover {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid white;
+    padding: 10px;
+    transition: background-color linear .3s;
+}
+label.control-label.col-md-2 {
+    color: white;
 }

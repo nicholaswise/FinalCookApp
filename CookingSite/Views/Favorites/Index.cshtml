@@ -1,12 +1,28 @@
 ﻿@model IEnumerable<CookingSite.Models.Favorite>
 @using Microsoft.AspNet.Identity;
+<!DOCTYPE HTML>
+<html>
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
+</head>
+<body>
 
+    <div class="flex-container">
+        <div class="flex-item">Term 1</div>
+        <div class="flex-item">Term 2</div>
+        <div class="flex-item">Term 3</div>
+        <div class="flex-item">Term 4</div>
+    </div>
+
+</body>
+</html>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
