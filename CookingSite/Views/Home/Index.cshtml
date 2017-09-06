@@ -4,18 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title </title>
-    @Styles.Render("~/Content/css")
-    @*@Scripts.Render("~/bundles/modernizr")*@
+    @*@Styles.Render("~/Content/Carousel")*@
 
 </head>
 <body>
-    @*Recipe Entry Field*@
-    <textarea id="recipeEntry" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Paste Recipe Here"></textarea>
 
+    <img id="bg" src="~/Images/bg.jpg" />
+    @*Recipe Entry Field*@
+    <div>
+        <textarea id="recipeEntry" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Paste Recipe Here">COPY + PASTE Your Recipe Here</textarea>
+    </div>
     @*FIND TERMS Button*@
     <div class="container">
-        <button id="findButton" class="btn draw-border">FIND TERMS</button>
+        <a class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>FIND TERMS</a>
+    </div>
+    @*CARD*@
+    <div class="row">
+        <div class="col s10 m5">
+            <div class="card">
+                <div class="card-image">
+                    <img src="~/images/toa-heftiba-134256.jpg">
+                    <span class="card-title">Peel</span>
+                    <a class="btn btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <p>Peeling is great. You can always peel stuff...</p>
+                </div>
+                <div class="card-action">
+                    <a href="https://youtu.be/8JggNP6jogg" target="_blank">How To Peel</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
+
 </html>

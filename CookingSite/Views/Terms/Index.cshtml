@@ -1,9 +1,6 @@
 ﻿@model IEnumerable<CookingSite.Models.Term>
 @using Microsoft.AspNet.Identity;
 
-
-
-
 @{
     ViewBag.Title = "Index";
 }
@@ -12,10 +9,10 @@
 
 <script>
 
-   $(function () {
+    $(function () {
         var $inputText = $('#inputText')
 
-       $('#sendFile').on('click', function () {
+        $('#sendFile').on('click', function () {
             alert('creating object')
             var postFile = {
                 userInput: $inputText.val(),
@@ -34,111 +31,72 @@
     });
 </script>
 
-<script>
-    var userInput1 = " ";
-    var aspId;
 
-        function AssignButtonClicked(elem) {
-            userInput1 = $(elem).data('assigned-id');
-            aspId = "@HttpContext.Current.User.Identity.GetUserId()";
+<body>
 
+    @*Recipe Entry Field*@
+    <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Paste Recipe Here"></textarea>
 
-        };
-
-    $(document).ready(function () {
-
-        $('.SetFavBtn').click(function () {
-
-                
-                alert(userInput1)
-                alert(aspId)
-                var postFile = {
-                    userInput1: userInput1,
-                    aspId: aspId
-                }
-                var postFile1 = {
-                    aspId: aspId
-                }
-
-                $.ajax({
-                    type: 'POST',
-                    url: "@Url.Action("SavFav")",
-                    data: JSON.stringify(postFile),
-                    contentType: "application/json; charset=utf-8",
-                    success: function (data) { alert(data); },
-                    error: function () {
-                        alert("error saving input");
-                    }
-                });
-
-            });
-        });
-
-</script>
-<div class="container">
-    <div class="col-md-4">
-        <h1>Upload Recipe</h1>
-        <input type="text" id="inputText" />
-        <button id="sendFile">Check Your Recipe</button>
+    @*FIND TERMS Button*@
+    <div class="container">
+        <a id="sendFile" class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>FIND TERMS</a>
     </div>
-</div>
-<div class="col-md-4" id="UploadedFile">
-    
-</div>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TermName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TermDef)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TermInfo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TermPicture)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TermVideo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsMatch)
-        </th>
-        <th></th>
-    </tr>
+    @Html.Partial("View");
 
-    @foreach (var item in Model)
-    {
-        if (item.IsMatch.Equals(true))
-        {
+   
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermDef )
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermInfo )
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermVideo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermPicture)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermName)
-                </td>
-                <td>
-                    <div class="SetFav">
-                        <input class="SetFavBtn" type="button" value="Assign" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID" />
-                    </div>
+</body>
+@*<div class="container">
+        <div class="col-md-4">
+            <h1>Upload Recipe</h1>
+            <input type="text" id="inputText" />
+            <button id="sendFile">Check Your Recipe</button>
+        </div>
+    </div>
+    <div class="col-md-4" id="UploadedFile">
 
-                </td>
-            </tr>
+    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TermName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermDef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermPicture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermVideo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsMatch)
+            </th>
+            <th></th>
+        </tr>
+
+
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <div class="SetFav">
+                    <input class="" type="button" value="Assign"  />
+                </div>
+
+            </td>
+        </tr>
         }
-    }
-</table>
+        }
+    </table>*@

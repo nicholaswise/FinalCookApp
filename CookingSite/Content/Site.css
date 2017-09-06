@@ -3,14 +3,27 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../images/toa-heftiba-134256.jpg');
+    background-image: url('../images/pablo-merchan-montes-237641.jpg');
     background-size: 100% auto;
-    background-position: top center;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
     text-decoration-color: white;
 }
+
+#bg {
+  content: "";
+  background: url('..../Images/bg.jpg');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
 .navbar-inverse .navbar-nav > li > a {
     color:white;
 }
@@ -56,35 +69,23 @@ a#loginLink {
     width: 500px;
     height: 200px;
     background-color: white;
-    opacity: 0.2;
+    opacity: 0.5;
     position: relative;
     min-width: 75%;
     /*padding-top: 200px;*/
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
+h4, h5 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
 
-/*h3 {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-}*/
-#findButton {
-    background: transparent;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    border: 2px solid white;
-    padding: 10px;
-    position:center;
-}
-#findButton:hover {
-    background-color: white;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    border: 2px solid white;
-    padding: 10px;
-    transition: background-color linear .3s;
-}
 label.control-label.col-md-2 {
     color: white;
+}
+
+
+a.waves-effect.waves-light.btn.btn-large {
+    margin: 10px 0px 10px 0px !important;
 }

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<CookingSite.Models.Term>
+@using Microsoft.AspNet.Identity;
+
+<script>
+    var userInput1 = " ";
+    var aspId;
+
+    function AssignButtonClicked(elem) {
+        userInput1 = $(elem).data('assigned-id');
+        aspId = "@HttpContext.Current.User.Identity.GetUserId()";
+
+
+    };
+
+    $(document).ready(function () {
+
+        $('.SetFavBtn').click(function () {
+
+
+            alert(userInput1)
+            alert(aspId)
+            var postFile = {
+                userInput1: userInput1,
+                aspId: aspId
+            }
+            var postFile1 = {
+                aspId: aspId
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "@Url.Action("SavFav")",
+                data: JSON.stringify(postFile),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) { alert(data); },
+                error: function () {
+                    alert("error saving input");
+                }
+            });
+
+        });
+    });
+
+</script>
+<script>
+    script>
+    var aspName = "@HttpContext.Current.User.Identity.GetUserName()";
+    alert(aspName)
+    $(function () {
+        alert("in funct")
+        if (aspName != "") {
+            alert("in if")
+            $('.SetFav').show()
+        } else {
+            $('.SetFav').hide()
+        }
+    });
+</script>
+<script>
+
+    //$.get("/Term/MakeFalse", null, function () {
+    //    alert("they false")
+    //});
+    var postFile = {
+        userInput1: userInput1,
+        aspId: aspId
+    }
+    $.ajax({
+        type: 'POST',
+        url: "@Url.Action("MakeFalse")",
+        data: JSON.stringify(postFile),
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {},
+        error: function () {
+
+        }
+    });
+
+</script>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        if (item.IsMatch.Equals(true))
+        {
+
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="@Html.DisplayFor(modelItem => item.TermPicture)">
+                        <span class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
+                        <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.TermDef)
+                            @Html.DisplayFor(modelItem => item.TermInfo)
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="@Html.DisplayFor(modelItem => item.TermVideo)" target="_blank">Video</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+</div>

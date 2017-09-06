@@ -254,5 +254,22 @@ namespace CookingSite.Controllers
             // Return char and concat substring.
             return char.ToUpper(outPut[0]) + outPut.Substring(1);
         }
+        public JsonResult MakeFalse()
+        {
+            CookingSiteDBEntities db = new CookingSiteDBEntities();
+            var relaceQuery =
+                            from key in db.Terms
+                            where key.IsMatch == true
+                            select key;
+            foreach (Term key in relaceQuery)
+            {
+                if (key.IsMatch == true)
+                {
+                    key.IsMatch = false;
+                }
+            }
+            db.SaveChanges();
+            return new JsonResult();
+        }
     }
 }
