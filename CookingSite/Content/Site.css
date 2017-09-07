@@ -20,6 +20,12 @@ body {
 .input-field .prefix  {
     color: white;
 }
+.card {
+    float: left;
+}
+.card .card-image img {
+    position: relative;
+}
 
 #bg {
   content: "";
@@ -62,6 +68,11 @@ textarea {
     background-color: transparent !important;
     border: none;
     position: static;
+    padding-bottom: 75px;
+}
+.glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-ok-circle:before {
+    color: white;
+    font-size: 40px;
 }
 
 .navbar-brand {
@@ -82,16 +93,16 @@ a#loginLink {
     opacity: 0.5;
     position: relative;
     min-width: 75%;
-    margin-top: 100px;
+    margin-top: 50px;
     /*padding-top: 200px;*/
 }
 #inputText {
     color:  black;
 }
 
-h4, h5 {
+h4, h5, h6 {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 label.control-label.col-md-2 {

@@ -33,7 +33,10 @@
     <script src="~/Scripts/userInputScripts.js"></script>
 </head>
 <body>
+    @*BG Image Overlay*@
     <img id="bg" src="~/Images/bg.jpg" />
+
+    @*Navbar Start*@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -43,16 +46,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 @*<img src="~/Images/Logomakr_6uFvk0.png" />*@
-                @Html.ActionLink("Chef Def", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand" })
 
             </div>
             
             @Html.Partial("_LoginPartial")
             <div class="navbar-collapse collapse">
-                @if (User.Identity.IsAuthenticated)
-                {<ul class="nav navbar-right">
-                    @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
-                </ul>}
+               
             </div>
             
         </div>

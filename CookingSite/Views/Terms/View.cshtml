@@ -43,7 +43,6 @@
 
 </script>
 <script>
-    script>
     var aspName = "@HttpContext.Current.User.Identity.GetUserName()";
     alert(aspName)
     $(function () {
@@ -70,7 +69,7 @@
         url: "@Url.Action("MakeFalse")",
         data: JSON.stringify(postFile),
         contentType: "application/json; charset=utf-8",
-        success: function (data) {},
+        success: function (data) { },
         error: function () {
 
         }
@@ -82,7 +81,6 @@
     {
         if (item.IsMatch.Equals(true))
         {
-
             <div class="col s8 m4">
                 <div class="card">
                     <div class="card-image">
@@ -105,8 +103,6 @@
                     </div>
                 </div>
             </div>
-
-
         }
     }
 </div>

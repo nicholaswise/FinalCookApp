@@ -159,7 +159,8 @@ namespace CookingSite.Controllers
                 {
                     outPut1 = keyArr[j];
                 }
-                string[] wordArr = outPut.Split(' ');
+                string[] wordArr = outPut.Split(' ', ',', '.', '\n', '?', '!', '@', '#', '$', '/', '%', '^', '&', '*', '(', ')', '{', '}', '[', ']', '|', '<', '>');
+                
                 for (int i = 0; i < wordArr.Length; i++)
                 {
                     var tempword = wordArr[i];
