@@ -291,20 +291,31 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Images\bg.jpg" />
+    <Content Include="Images\bonito.jpg" />
     <Content Include="Images\bordelaise-10.jpg" />
+    <Content Include="Images\chop.png" />
+    <Content Include="Images\chorizo.jpg" />
     <Content Include="Images\dice.jpeg" />
     <Content Include="Images\english-thyme.jpg" />
+    <Content Include="Images\frying.jpg" />
+    <Content Include="Images\gluten.jpg" />
     <Content Include="Images\joanna-kosinska-127887.jpg" />
     <Content Include="Images\krista-mcphee-343974.jpg" />
     <Content Include="Images\Logomakr_6uFvk0.png" />
     <Content Include="Images\Logomakr_9E8hL7.png" />
     <Content Include="Images\michal-grosicki-236574.jpg" />
+    <Content Include="Images\nagaimo.jpg" />
     <Content Include="Images\nordwood-themes-190181.jpg" />
     <Content Include="Images\olenka-kotyk-75072.jpg" />
     <Content Include="Images\pablo-merchan-montes-237641.jpg" />
+    <Content Include="Images\pickeled.jpg" />
+    <Content Include="Images\simmer.jpg" />
+    <Content Include="Images\sliced.jpg" />
+    <Content Include="Images\stock.jpg" />
     <Content Include="Images\thyme2.jpg" />
     <Content Include="Images\toa-heftiba-134256.jpg" />
     <Content Include="Images\tobias-van-schneider-88137.jpg" />
+    <Content Include="Images\whisk.jpg" />
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
