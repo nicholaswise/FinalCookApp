@@ -83,12 +83,14 @@
         if (item.IsMatch.Equals(true))
         {
 
-            <div class="col s12 m6">
+            <div class="col s8 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="@Html.DisplayFor(modelItem => item.TermPicture)">
+                        <img class="picSize" src="@Html.DisplayFor(modelItem => item.TermPicture)">
                         <span class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
-                        <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons">add</i></a>
+                        <div class="SetFav">
+                            <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons SetFavBtn">add</i></a>
+                        </div>
                     </div>
                     <div class="card-content">
                         <p>
@@ -98,9 +100,12 @@
                     </div>
                     <div class="card-action">
                         <a href="@Html.DisplayFor(modelItem => item.TermVideo)" target="_blank">Video</a>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TermID })
+                        @Html.ActionLink("Details", "Details", new { id = item.TermID })
                     </div>
                 </div>
             </div>
+
 
         }
     }

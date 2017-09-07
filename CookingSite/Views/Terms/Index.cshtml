@@ -5,7 +5,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <script>
 
@@ -35,11 +34,22 @@
 <body>
 
     @*Recipe Entry Field*@
-    <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Paste Recipe Here"></textarea>
+    <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Paste Recipe Here">Copy + Paste Recipe Here</textarea>
+    
+    @*<div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="wrong" data-success="right">Copy + Paste Recipe Here</label>
+                </div>
+            </div>
+        </form>
+    </div>*@
 
     @*FIND TERMS Button*@
     <div class="container">
-        <a id="sendFile" class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>FIND TERMS</a>
+        <a id="sendFile" class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>Search Recipe</a>
     </div>
     @Html.Partial("View");
 

@@ -1,9 +1,9 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Roboto");
 
 body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    background-image: url('../images/pablo-merchan-montes-237641.jpg');
+    background-image: url('../images/toa-heftiba-134256.jpg');
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,11 +11,20 @@ body {
     text-align: center;
     text-decoration-color: white;
 }
+.picSize {
+    
+}
+.card-title {
+   text-shadow: 5px gray;
+}
+.input-field .prefix  {
+    color: white;
+}
 
 #bg {
   content: "";
   background: url('..../Images/bg.jpg');
-  opacity: 0.5;
+  opacity: 0.6;
   top: 0;
   left: 0;
   bottom: 0;
@@ -52,10 +61,11 @@ textarea {
 .navbar-inverse {
     background-color: transparent !important;
     border: none;
+    position: static;
 }
 
 .navbar-brand {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Open Sans', sans-serif;
     color: white !important;
     font-size: 3em;
 }
@@ -72,8 +82,11 @@ a#loginLink {
     opacity: 0.5;
     position: relative;
     min-width: 75%;
-    /*padding-top: 200px;*/
     margin-top: 100px;
+    /*padding-top: 200px;*/
+}
+#inputText {
+    color:  black;
 }
 
 h4, h5 {

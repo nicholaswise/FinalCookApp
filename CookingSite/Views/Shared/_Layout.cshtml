@@ -42,16 +42,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Cook App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*<img src="~/Images/Logomakr_6uFvk0.png" />*@
+                @Html.ActionLink("Chef Def", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand" })
 
             </div>
+            
             @Html.Partial("_LoginPartial")
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-right">
+                @if (User.Identity.IsAuthenticated)
+                {<ul class="nav navbar-right">
                     @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
-                </ul>
+                </ul>}
             </div>
+            
         </div>
+        @*<div class="input-field col s6">
+            <i class="material-icons prefix">search</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix"></label>
+        </div>*@
     </div>
     <div class="container body-content">
         @RenderBody()
