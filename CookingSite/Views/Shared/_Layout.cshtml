@@ -31,10 +31,33 @@
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
 
     <script src="~/Scripts/userInputScripts.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+
+    <style>
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+            input[type=text]:focus {
+                width: 100%;
+            }
+    </style>
 </head>
 <body>
     @*BG Image Overlay*@
-    <img id="bg" src="~/Images/bg.jpg" />
+    <img style="background-repeat: repeat" class="img-responsive" id="bg" src="~/Images/bg.jpg" />
 
     @*Navbar Start*@
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -45,22 +68,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @*<img src="~/Images/Logomakr_6uFvk0.png" />*@
-                @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo"})
+                <div class="navbar-right">
+                    <form>
+                        <input type="text" name="search" placeholder="Search..">
+                    </form>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+            {<ul class="nav navbar-right">
+                    @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
+                </ul>}
+            </div>
+            
 
-            </div>
-            
             @Html.Partial("_LoginPartial")
-            <div class="navbar-collapse collapse">
-               
-            </div>
-            
         </div>
-        @*<div class="input-field col s6">
-            <i class="material-icons prefix">search</i>
-            <input id="icon_prefix" type="text" class="validate">
-            <label for="icon_prefix"></label>
-        </div>*@
+
     </div>
     <div class="container body-content">
         @RenderBody()

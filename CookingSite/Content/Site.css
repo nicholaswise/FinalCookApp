@@ -1,5 +1,5 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Roboto");
-
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps");
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -11,32 +11,30 @@ body {
     text-align: center;
     text-decoration-color: white;
 }
-.picSize {
-    
-}
+
+
 .card-title {
    text-shadow: 5px gray;
 }
 .input-field .prefix  {
     color: white;
 }
-.card {
-    float: left;
-}
+
 .card .card-image img {
-    position: relative;
+    position: static;
 }
 
-#bg {
-  content: "";
-  background: url('..../Images/bg.jpg');
+#bg.img-responsive {
   opacity: 0.6;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
-  z-index: -1; 
+  position: fixed;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -74,11 +72,22 @@ textarea {
     color: white;
     font-size: 40px;
 }
-
-.navbar-brand {
-    font-family: 'Open Sans', sans-serif;
+td {
+    color: white;
+}
+.navbar-brand-logo {
+    font-family: 'Oleo Script Swash Caps', cursive;
     color: white !important;
     font-size: 3em;
+}
+.navbar-brand {
+    color: white !important;
+}
+input {
+    color: white !important;
+}
+#logoutForm.navbar-right {
+    margin: 0px;
 }
 a#registerLink {
     color: white;
@@ -99,8 +108,17 @@ a#loginLink {
 #inputText {
     color:  black;
 }
+.navbar-right {
+    margin-left: 100px;
+}
+.form-control {
+    color: white;
+}
+nav {
+    background-color: transparent;
+}
 
-h4, h5, h6 {
+h2, h4, h5, h6 {
     color: white;
     font-family: 'Open Sans', sans-serif;
 }
