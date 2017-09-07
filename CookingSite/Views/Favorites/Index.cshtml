@@ -2,26 +2,14 @@
 @using Microsoft.AspNet.Identity;
 <!DOCTYPE HTML>
 <html>
-<head>
-   
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title </title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <script src="jquery-3.2.1.min.js"></script>
 
-
-</head>
 <body>
 
  
 </body>
 </html>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
@@ -30,9 +18,9 @@
             @Html.DisplayNameFor(model => model.Term.TermName)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model)
+@*@foreach (var item in Model)
 {
     if (item.AspNetUser.Email == @HttpContext.Current.User.Identity.Name)
     {
@@ -52,6 +40,31 @@
         </tr>
     }
 
-}
+}*@
 
-</table>
+@*</table>*@
+<div class="row">
+    @foreach (var item in Model)
+    {
+            <div class="col s8 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="picSize" src="@Html.DisplayFor(modelItem => item.Term.TermPicture)">
+                        <span class="card-title">@Html.DisplayFor(modelItem => item.Term.TermName)</span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Term.TermDef)
+                            @Html.DisplayFor(modelItem => item.Term.TermInfo)
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="@Html.DisplayFor(modelItem => item.Term.TermVideo)" target="_blank">Video</a>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TermID })
+                        @Html.ActionLink("Details", "Details", new { id = item.TermID })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
