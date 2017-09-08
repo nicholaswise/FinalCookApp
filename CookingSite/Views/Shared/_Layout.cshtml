@@ -9,11 +9,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/css")
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -22,6 +18,11 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,9 +57,6 @@
     </style>
 </head>
 <body>
-    @*BG Image Overlay*@
-    <img style="background-repeat: repeat" class="img-responsive" id="bg" src="~/Images/bg.jpg" />
-
     @*Navbar Start*@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -68,19 +66,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo"})
+                @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo" })
                 <div class="navbar-right">
                     <form>
                         <input type="text" name="search" placeholder="Search..">
                     </form>
-                </div>
-                @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity.IsAuthenticated)
             {<ul class="nav navbar-right">
-                    @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
-                </ul>}
+                        @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
+                    </ul>}
+                </div>
             </div>
-            
-
             @Html.Partial("_LoginPartial")
         </div>
 
@@ -92,5 +88,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @*BG Image Overlay*@
+    <img class="img-responsive" id="bg" src="~/Images/bg.jpg" />
 </body>
 </html>

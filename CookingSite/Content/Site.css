@@ -1,22 +1,30 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Roboto");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps");
+
 body {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     padding-bottom: 20px;
-    background-image: url('../images/toa-heftiba-134256.jpg');
+    background-image: url('../images/pablo-merchan-montes-237641.jpg');
     background-size: 100% auto;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     text-align: center;
     text-decoration-color: white;
 }
+.topGlyphs {
+    margin-top: 40px;
+}
 
+.container {
+    width: 80% !important;
+}
 
 .card-title {
-   text-shadow: 5px gray;
+    text-shadow: 5px gray;
 }
-.input-field .prefix  {
+
+.input-field .prefix {
     color: white;
 }
 
@@ -25,20 +33,20 @@ body {
 }
 
 #bg.img-responsive {
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color:white;
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -60,67 +68,104 @@ select,
 textarea {
     max-width: 280px;
 }
- 
+
 
 .navbar-inverse {
-    background-color: transparent !important;
+    background-color: black;
     border: none;
     position: static;
-    padding-bottom: 75px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    opacity: .5;
 }
-.glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-ok-circle:before {
+
+.glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-book:before {
     color: white;
     font-size: 40px;
 }
+#bgIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid white;
+  color: white;
+  display: inline-table;
+  text-align: center;
+}
+
 td {
     color: white;
+}
+
+.navbar-brand {
+    color: white !important;
+    margin-top: 5px;
 }
 .navbar-brand-logo {
     font-family: 'Oleo Script Swash Caps', cursive;
     color: white !important;
     font-size: 3em;
+    opacity: 1;
 }
-.navbar-brand {
-    color: white !important;
-}
+
 input {
     color: white !important;
 }
+
+label {
+    color: white !important;
+}
+
 #logoutForm.navbar-right {
     margin: 0px;
 }
+
 a#registerLink {
     color: white;
 }
+
 a#loginLink {
     color: white;
 }
+
 .autoExpand {
     width: 500px;
     height: 200px;
     background-color: white;
-    opacity: 0.5;
+    opacity: 0.8;
     position: relative;
     min-width: 75%;
     margin-top: 50px;
     /*padding-top: 200px;*/
 }
+
 #inputText {
-    color:  black;
+    color: black;
 }
+
 .navbar-right {
     margin-left: 100px;
 }
+
 .form-control {
     color: white;
 }
+
 nav {
     background-color: transparent;
 }
 
-h2, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     color: white;
     font-family: 'Open Sans', sans-serif;
+}
+th {
+    color: white;
+}
+
+form.form-horizontal {
+    align-content: center;
 }
 
 label.control-label.col-md-2 {
@@ -131,3 +176,43 @@ label.control-label.col-md-2 {
 a.waves-effect.waves-light.btn.btn-large {
     margin: 10px 0px 10px 0px !important;
 }
+
+.SetFav {
+    position: relative;
+    /*display: inline-block;
+        border-bottom: 1px dotted black;*/
+}
+
+    .SetFav .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: white;
+        color: #000;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: 64px;
+        margin-bottom: 30px;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+        .SetFav .tooltiptext::after {
+            content: " ";
+            position: absolute;
+            top: 100%; /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+    .SetFav:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }

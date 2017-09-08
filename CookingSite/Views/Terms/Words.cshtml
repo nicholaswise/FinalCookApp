@@ -1,23 +1,15 @@
 ﻿@model IEnumerable<CookingSite.Models.Term>
 @using Microsoft.AspNet.Identity;
-
 <script>
     var userInput1 = " ";
     var aspId;
-
     function AssignButtonClicked(elem) {
         userInput1 = $(elem).data('assigned-id');
         aspId = "@HttpContext.Current.User.Identity.GetUserId()";
-
-
     };
-
     $(document).ready(function () {
-
         $('.SetFavBtn').click(function () {
 
-
-            
             var postFile = {
                 userInput1: userInput1,
                 aspId: aspId
@@ -25,29 +17,26 @@
             var postFile1 = {
                 aspId: aspId
             }
-
             $.ajax({
                 type: 'POST',
                 url: "@Url.Action("SavFav")",
                 data: JSON.stringify(postFile),
                 contentType: "application/json; charset=utf-8",
-                success: function (data) { alert(); },
+                success: function (data) {  },
                 error: function () {
                     alert("error saving input");
                 }
             });
-
         });
     });
-
 </script>
 <script>
     var aspName = "@HttpContext.Current.User.Identity.GetUserName()";
-   
+
     $(function () {
-        
+
         if (aspName != "") {
-            
+
             $('.SetFav').show()
         } else {
             $('.SetFav').hide()
@@ -55,7 +44,6 @@
     });
 </script>
 <script>
-
     //$.get("/Term/MakeFalse", null, function () {
     //    alert("they false")
     //});
@@ -70,11 +58,24 @@
         contentType: "application/json; charset=utf-8",
         success: function (data) { },
         error: function () {
-
         }
     });
-
 </script>
+@*<script>
+        var IsLike = @Terms.Select(x => x.IsLike);
+        $(function () {
+            if (IsLike == true) {
+                $('.SetFav').show()
+            } else {
+                $('.SetFav').hide()
+            }
+        });
+    </script>*@
+
+@*FIND TERMS Button*@
+<div class="container">
+    <a href="~/Terms/Index" id="sendFile" class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>Search New Recipe</a>
+</div>
 
 <div class="row">
     @foreach (var item in Model)
@@ -89,7 +90,7 @@
                         <div class="SetFav">
                             <span class="tooltiptext">Add To Favorites</span>
                             <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons SetFav">add</i></a>
-                            
+
                         </div>
                     </div>
                     <div class="card-content">

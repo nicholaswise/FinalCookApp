@@ -12,7 +12,7 @@
         var $inputText = $('#inputText')
 
         $('#sendFile').on('click', function () {
-            alert('creating object')
+            
             var postFile = {
                 userInput: $inputText.val(),
             };
@@ -21,7 +21,7 @@
                 url: "@Url.Action("GetKey")",
                 data: JSON.stringify(postFile),
                 contentType: "application/json; charset=utf-8",
-                success: function (data) { alert(data); window.location.reload(); },
+                success: function (data) { alert(); window.location.href = "/Terms/Words"; },
                 error: function () {
                     alert("error saving input");
                 }
@@ -32,29 +32,31 @@
 
 
 <body>
-    <div class="col-md-4">
-        <center>
-            <a href="http://www.allrecipes.com" target="_blank"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-            <h6>Find A Recipe</h6>
-        </center>
-    </div>
-    <div class="col-md-4">
-        <center>
-            <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>
-            <h6>Copy The Directions + Paste Below</h6>
-        </center>
-    </div>
-    <div class="col-md-4">
-        <center>
-            <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-            <h6>Get Help!</h6>
-        </center>
+    <div class="topGlyphs">
+        <div class="col-md-4">
+            <center>
+                <a href="http://www.allrecipes.com" target="_blank"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
+                <h6>1. Find A Recipe</h6>
+            </center>
+        </div>
+        <div class="col-md-4">
+            <center>
+
+                <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>
+                <h6>2. Copy The Directions + Paste Below</h6>
+            </center>
+        </div>
+        <div class="col-md-4">
+            <center>
+
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                <h6>3. Click "Search Recipe"</h6>
+            </center>
+        </div>
     </div>
 
     @*Recipe Entry Field*@
     <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Copy + Paste Recipe Here"></textarea>
-    
-   
 
     @*FIND TERMS Button*@
     <div class="container">
@@ -62,7 +64,7 @@
     </div>
     @Html.Partial("View");
 
-   
+
 
 </body>
 @*<div class="container">

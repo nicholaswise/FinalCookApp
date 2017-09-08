@@ -18,10 +18,17 @@ namespace CookingSite.Controllers
         public int userInput1 { get; set; }
         public string aspId { get; set; }
         public int ctr = 1;
+        public int output;
+        public bool isFav;
+        public static List<int> savfavId = new List<int> { };
 
 
         // GET: Terms
         public ActionResult Index()
+        {
+            return View(db.Terms.ToList());
+        }
+        public ActionResult Words()
         {
             return View(db.Terms.ToList());
         }
@@ -198,13 +205,11 @@ namespace CookingSite.Controllers
 
         public JsonResult SavFav(TermsController term)
         {
-            int output = term.userInput1;
+            term.output = term.userInput1;
             string output2 = term.aspId;
             var resetQuery =
                            from key in db.Terms
                            select key;
-
-
             foreach (Term key in resetQuery)
             {
                 if (key.IsLiked == true || key.IsLiked == null)
@@ -216,8 +221,6 @@ namespace CookingSite.Controllers
                           from key in db.Terms
                           where key.TermID == output
                           select key;
-
-
             foreach (Term key in setQuery)
             {
                 if (key.IsLiked == false || key.IsLiked == null)
@@ -225,23 +228,37 @@ namespace CookingSite.Controllers
                     key.IsLiked = true;
                 }
             }
-
             db.SaveChanges();
-
             int tempfav = term.ctr++;
-
             int tempTerm = term.userInput1;
             string tempId = term.aspId;
-            Favorite fav = new Favorite
-            {
-                FavoriteID = tempfav,
-                TermID = tempTerm,
-                Id = tempId
-            };
+            List<string> wordArr1 = new List<string> { };
 
-            // Add the new object to the Orders collection.
-            db.Favorites.Add(fav);
-            db.SaveChanges();
+            var checkFav =
+                from key in db.Favorites
+                select key.TermID.ToString();
+            wordArr1.AddRange(checkFav);
+            var tempInput = term.output.ToString();
+            if (wordArr1.Contains(tempInput) == true)
+            {
+                term.isFav = true;
+            }
+            else
+            {
+                term.isFav = false;
+            }
+            if (term.isFav == false)
+            {
+                Favorite fav = new Favorite
+                {
+                    FavoriteID = tempfav,
+                    TermID = tempTerm,
+                    Id = tempId
+                };
+
+                db.Favorites.Add(fav);
+                db.SaveChanges();
+            }
 
             return new JsonResult() { Data = JsonConvert.SerializeObject(output2), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
