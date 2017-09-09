@@ -68,9 +68,9 @@
                 </button>
                 @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo" })
                 <div class="navbar-right">
-                    <form>
+                    @*<form>
                         <input type="text" name="search" placeholder="Search..">
-                    </form>
+                    </form>*@
                     @if (User.Identity.IsAuthenticated)
             {<ul class="nav navbar-right">
                         @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
