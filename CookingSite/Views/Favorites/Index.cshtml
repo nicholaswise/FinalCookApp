@@ -1,57 +1,34 @@
 ﻿@model IEnumerable<CookingSite.Models.Favorite>
 @using Microsoft.AspNet.Identity;
 <!DOCTYPE HTML>
-<html>
-<head>
-   
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title </title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <script src="jquery-3.2.1.min.js"></script>
-
-
-</head>
-<body>
-
- 
-</body>
-</html>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Term.TermName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model)
-{
-    if (item.AspNetUser.Email == @HttpContext.Current.User.Identity.Name)
+<h2 style="font-family: Roboto, sans-serif;">
+    My Favorites
+</h2>
+<form>
+        <input type="text" name="search" placeholder="Search Favorites">
+    </form>
+<div class="row">
+    @foreach (var item in Model)
     {
-
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Term.TermDef )
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.FavoriteID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.FavoriteID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.FavoriteID })
-            </td>
-        </tr>
+        if (item.AspNetUser.Email == @HttpContext.Current.User.Identity.Name)
+        {
+            <div class="col s8 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="picSize" src="@Html.DisplayFor(modelItem => item.Term.TermPicture)">
+                        <span class="card-title">@Html.DisplayFor(modelItem => item.Term.TermName)</span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Term.TermDef)
+                            
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        @Html.ActionLink("Details", "Details", "Terms", new { id = item.Term.TermID }, null)
+                    </div>
+                </div>
+            </div>
+        }
     }
-
-}
-
-</table>
+</div>
