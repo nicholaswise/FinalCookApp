@@ -13,6 +13,8 @@
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Font Awesome CDN-->
+    <script src="https://use.fontawesome.com/bdebd785c5.js"></script>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -67,19 +69,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo" })
-                <div class="navbar-right">
-                    @*<form>
-                        <input type="text" name="search" placeholder="Search..">
-                    </form>*@
-                    @if (User.Identity.IsAuthenticated)
-            {<ul class="nav navbar-right">
-                        @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
-                    </ul>}
-                </div>
+               
             </div>
             @Html.Partial("_LoginPartial")
-        </div>
 
+            @*Old Favorites Button*@
+            @*@if (User.Identity.IsAuthenticated)
+            {<ul class="nav navbar-right">
+                @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
+            </ul>}*@
+        </div>
     </div>
     <div class="container body-content">
         @RenderBody()
@@ -97,7 +96,7 @@
             <div class="container">
                 <h6 class="white-text">Recipe Rescue</h6>
                 <p class="grey-text text-lighten-4">50 Public Square, Cleveland, OH</p>
-                <a class="grey-text text-lighten-4 center-block" href="http://www.wecancodeit.org">We Can Code IT</a>
+                <a style="border-top: 1px solid white; padding-top: 5px;" class="grey-text text-lighten-4 center-block" href="http://www.wecancodeit.org">We Can Code IT</a>
             </div>
         </div>
     </footer>

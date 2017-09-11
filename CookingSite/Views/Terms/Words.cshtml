@@ -86,7 +86,7 @@
                 <div class="card">
                     <div class="card-image">
                         <img class="picSize" src="@Html.DisplayFor(modelItem => item.TermPicture)">
-                        <span class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
+                        <span id="loginCard" class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
                         <div class="SetFav">
                             <span class="tooltiptext">Add To Favorites</span>
                             <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons SetFav">add</i></a>
@@ -99,8 +99,6 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <a href="@Html.DisplayFor(modelItem => item.TermVideo)" target="_blank">Video</a>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.TermID })
                         @Html.ActionLink("Details", "Details", new { id = item.TermID })
                     </div>
                 </div>

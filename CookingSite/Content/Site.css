@@ -17,6 +17,9 @@ body {
     background-color: #2E2D30 !important;
     padding-top: 0px !important;
 }
+#Google.btn.btn-default {
+    padding: 5px 5px 5px 5px !important;
+}
 .control-label {
     color: gray !important;
 }
@@ -28,9 +31,7 @@ body {
     width: 80% !important;
 }
 
-.card-title {
-    text-shadow: 5px gray;
-}
+
 
 .input-field .prefix {
     color: white;
@@ -55,6 +56,17 @@ body {
 
 .navbar-inverse .navbar-nav > li > a {
     color: white;
+}
+.navbar-right {
+    margin-top: 5px;
+}
+.navbar-right > li > a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+}
+.navbar-right > li > a:hover {
+    background-color: white;
+    opacity: .5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -86,6 +98,12 @@ textarea {
     color: white !important;
     font-size: 3em;
     opacity: 1 !important;
+    padding-bottom: 5px;
+}
+.navbar-brand-logo:hover {
+    text-decoration: none;
+    color: white !important;
+    opacity: .5 !important;
 }
 .navbar-inverse {
     background-color: black;
@@ -94,12 +112,15 @@ textarea {
     padding-bottom: 0px;
     padding-top: 0px;
     margin-top: 0px;
-    opacity: .5;
+    opacity: 1;
 }
 
 .glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-book:before {
     color: white;
     font-size: 40px;
+}
+.glyphicon-book:hover{
+    opacity: .5;
 }
 #bgIcon {
   width: 60px;
@@ -152,9 +173,6 @@ a#loginLink {
     color: black;
 }
 
-.navbar-right {
-    margin-left: 100px;
-}
 
 .form-control {
     color: white;
@@ -231,6 +249,7 @@ a.waves-effect.waves-light.btn.btn-large {
     color: white !important;
     background-color: #2BBBAD;
 }
-#Email.form-control, #Password.form-control {
+#Email.form-control, #Password.form-control, #ConfirmPassword.form-control {
     color: gray !important;
 }
+
