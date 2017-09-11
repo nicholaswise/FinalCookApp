@@ -3,7 +3,7 @@
 
 body {
     /*padding-top: 20px;*/
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     background-image: url('../images/pablo-merchan-montes-237641.jpg');
     background-size: 100% auto;
     background-position: center;
@@ -11,6 +11,14 @@ body {
     background-attachment: fixed;
     text-align: center;
     text-decoration-color: white;
+}
+.page-footer {
+    margin-top: 100px;
+    background-color: #2E2D30 !important;
+    padding-top: 0px !important;
+}
+.control-label {
+    color: gray !important;
 }
 .topGlyphs {
     margin-top: 40px;
@@ -69,11 +77,20 @@ textarea {
     max-width: 280px;
 }
 
-
+.navbar-brand {
+    color: white !important;
+    margin-top: 5px;
+}
+.navbar-brand-logo {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    color: white !important;
+    font-size: 3em;
+    opacity: 1 !important;
+}
 .navbar-inverse {
     background-color: black;
     border: none;
-    position: static;
+    position: relative;
     padding-bottom: 0px;
     padding-top: 0px;
     margin-top: 0px;
@@ -98,16 +115,7 @@ td {
     color: white;
 }
 
-.navbar-brand {
-    color: white !important;
-    margin-top: 5px;
-}
-.navbar-brand-logo {
-    font-family: 'Oleo Script Swash Caps', cursive;
-    color: white !important;
-    font-size: 3em;
-    opacity: 1;
-}
+
 
 input {
     color: white !important;
@@ -216,3 +224,13 @@ a.waves-effect.waves-light.btn.btn-large {
         visibility: visible;
         opacity: 1;
     }
+#reset.waves-button-input {
+    color: gray !important;
+}
+#reset.waves-button-input:hover {
+    color: white !important;
+    background-color: #2BBBAD;
+}
+#Email.form-control, #Password.form-control {
+    color: gray !important;
+}
