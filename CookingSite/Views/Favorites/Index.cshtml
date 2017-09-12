@@ -32,6 +32,7 @@
                     </div>
                     <div class="card-action">
                         @Html.ActionLink("Details", "Details", "Terms", new { id = item.Term.TermID }, null)
+                        @Html.ActionLink("Delete", "Delete", "Favorites", new { id = item.FavoriteID }, null)
                     </div>
                 </div>
             </div>

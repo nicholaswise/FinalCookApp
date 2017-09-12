@@ -1,5 +1,5 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans|Roboto");
-@import url("https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps");
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Oleo+Script");
 
 body {
     /*padding-top: 20px;*/
@@ -11,11 +11,14 @@ body {
     background-attachment: fixed;
     text-align: center;
     text-decoration-color: white;
+    min-height: 100%;
 }
 .page-footer {
     margin-top: 100px;
     background-color: #2E2D30 !important;
     padding-top: 0px !important;
+    position: absolute;
+
 }
 #Google.btn.btn-default {
     padding: 5px 5px 5px 5px !important;
@@ -62,7 +65,7 @@ body {
 }
 .navbar-right > li > a {
     font-family: 'Roboto', sans-serif;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 .navbar-right > li > a:hover {
     background-color: white;
@@ -88,17 +91,25 @@ select,
 textarea {
     max-width: 280px;
 }
+.card-title {
+    text-shadow: 1px 1px 8px black;
+}
+.detailsStyle {
+    max-width: 500px;
+    height: auto;
+    margin: auto;
+}
 
 .navbar-brand {
     color: white !important;
-    margin-top: 5px;
+    margin-top: -3px;
 }
+
 .navbar-brand-logo {
-    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Oleo Script', cursive;
     color: white !important;
     font-size: 3em;
     opacity: 1 !important;
-    padding-bottom: 5px;
 }
 .navbar-brand-logo:hover {
     text-decoration: none;
@@ -112,7 +123,7 @@ textarea {
     padding-bottom: 0px;
     padding-top: 0px;
     margin-top: 0px;
-    opacity: 1;
+    opacity: .5;
 }
 
 .glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-book:before {
@@ -252,4 +263,6 @@ a.waves-effect.waves-light.btn.btn-large {
 #Email.form-control, #Password.form-control, #ConfirmPassword.form-control {
     color: gray !important;
 }
-
+.login{
+    display:none;
+}

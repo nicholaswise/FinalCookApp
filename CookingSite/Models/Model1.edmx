@@ -143,30 +143,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Favorites_AspNetUsers">
-          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
-          <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AspNetUsers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Favorites">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Favorites_Terms">
-          <End Role="Terms" Type="Self.Terms" Multiplicity="1" />
-          <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Terms">
-              <PropertyRef Name="TermID" />
-            </Principal>
-            <Dependent Role="Favorites">
-              <PropertyRef Name="TermID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CookingSiteDBModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
@@ -191,14 +167,6 @@
           <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Favorites_AspNetUsers" Association="Self.FK_Favorites_AspNetUsers">
-            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
-            <End Role="Favorites" EntitySet="Favorites" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Favorites_Terms" Association="Self.FK_Favorites_Terms">
-            <End Role="Terms" EntitySet="Terms" />
-            <End Role="Favorites" EntitySet="Favorites" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>

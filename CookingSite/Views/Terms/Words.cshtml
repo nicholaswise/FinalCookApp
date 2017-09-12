@@ -9,7 +9,7 @@
     };
     $(document).ready(function () {
         $('.SetFavBtn').click(function () {
-
+            $(this).hide()
             var postFile = {
                 userInput1: userInput1,
                 aspId: aspId
@@ -86,10 +86,23 @@
                 <div class="card">
                     <div class="card-image">
                         <img class="picSize" src="@Html.DisplayFor(modelItem => item.TermPicture)">
-                        <span id="loginCard" class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
-                        <div class="SetFav">
-                            <span class="tooltiptext">Add To Favorites</span>
-                            <a class="btn btn-floating halfway-fab waves-effect waves-light red SetFavBtn" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons SetFav">add</i></a>
+                        <span class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
+                        <div class="SetFav login">
+                            @*<span class="tooltiptext">Add To Favorites</span>*@
+                            @if (ViewBag.Favorites.Contains(item.TermID))
+                            {
+                                <span class="tooltiptext">Already Added</span>
+                                <a class="btn btn-floating halfway-fab waves-effect waves-light red "></a>
+
+                            }
+                            else
+                            {
+                                <span class="tooltiptext red">Already Added</span>
+                                <a class="btn btn-floating halfway-fab waves-effect waves-light red "></a>
+                                <span class="tooltiptext">Add To Favorites</span>
+                                <a class="btn btn-floating halfway-fab waves-effect waves-light green SetFavBtn faved1" onclick="AssignButtonClicked(this)" data-assigned-id="@item.TermID"><i class="material-icons SetFav">add</i>></a>
+
+                            }
 
                         </div>
                     </div>

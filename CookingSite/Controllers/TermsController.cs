@@ -30,6 +30,13 @@ namespace CookingSite.Controllers
         }
         public ActionResult Words()
         {
+            List<int> wordArr1 = new List<int> { };
+
+            var checkFav =
+                from key in db.Favorites
+                select key.TermID;
+            wordArr1.AddRange(checkFav);
+            ViewBag.Favorites = wordArr1;
             return View(db.Terms.ToList());
         }
 

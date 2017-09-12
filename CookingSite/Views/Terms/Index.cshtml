@@ -22,7 +22,7 @@
                 url: "@Url.Action("GetKey")",
                 data: JSON.stringify(postFile),
                 contentType: "application/json; charset=utf-8",
-                success: function (data) { alert(); window.location.href = "/Terms/Words"; },
+                success: function (data) { window.location.href = "/Terms/Words"; },
                 error: function () {
                     alert("error saving input");
                 }

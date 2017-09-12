@@ -68,16 +68,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <div class="navbar-brand">
+                    <img id="logo" src="~/Images/Logomakr_9E8hL7.png" style="height: 35px; width: 35px;" />
+                </div>
                 @Html.ActionLink("Recipe Rescue", "Index", "Terms", new { area = "" }, new { @class = "navbar-brand-logo" })
-               
+                
             </div>
+            
             @Html.Partial("_LoginPartial")
 
             @*Old Favorites Button*@
             @*@if (User.Identity.IsAuthenticated)
-            {<ul class="nav navbar-right">
-                @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
-            </ul>}*@
+                {<ul class="nav navbar-right">
+                    @Html.ActionLink("Favorites", "Index", "Favorites", new { area = "" }, new { @class = "navbar-brand" })
+                </ul>}*@
         </div>
     </div>
     <div class="container body-content">
