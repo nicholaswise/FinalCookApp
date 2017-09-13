@@ -28,6 +28,10 @@ namespace CookingSite.Controllers
         {
             return View(db.Terms.ToList());
         }
+
+        //The following method runs a linq query and populates a list. 
+        //The list is then ViewBag-ed and used to set the favorites button to red
+        //if the termID is contained in the list
         public ActionResult Words()
         {
             List<int> wordArr1 = new List<int> { };
@@ -143,6 +147,11 @@ namespace CookingSite.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //The following method recieves a JSON object from the terms index view.
+        //The method utilizes linq queries, lists and arrays to set the bool in the
+        //Terms table to false then compare terms to set the value to for each search.
+        //This allows the index view to show only terms that match the users' input.
         [HttpPost]
 
         public JsonResult GetKey(TermsController term)
@@ -211,6 +220,12 @@ namespace CookingSite.Controllers
             }
             return new JsonResult() { Data = JsonConvert.SerializeObject(outPut1), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
+
+        //The following method recieves a JSON object from the terms index view.
+        //The methods utilizes linq queries foreach loops and a list to accomplish the following:
+        //Save an item to the favorites table, not allow of entering of of a favorite item
+        //which a customer has already added, not allow multiple favorites of the same item
+        //to appear on the favorites index view
         [HttpPost]
 
         public JsonResult SavFav(TermsController term)
@@ -272,6 +287,8 @@ namespace CookingSite.Controllers
 
             return new JsonResult() { Data = JsonConvert.SerializeObject(output2), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
+
+        //The following method is called by the GetKey() method. The method sets all of the input from the user search to uppercase
         static string UppercaseFirst(string outPut)
         {
             // Check for empty string.
@@ -282,6 +299,7 @@ namespace CookingSite.Controllers
             // Return char and concat substring.
             return char.ToUpper(outPut[0]) + outPut.Substring(1);
         }
+        //This method is called by a JSON method in the terms controller and sets the IsMatch bool in the terms table to false.
         public JsonResult MakeFalse()
         {
             CookingSiteDBEntities db = new CookingSiteDBEntities();

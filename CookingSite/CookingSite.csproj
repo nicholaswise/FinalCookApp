@@ -296,6 +296,12 @@
     <Content Include="Images\Depouillage.jpg" />
     <Content Include="Images\dice.jpeg" />
     <Content Include="Images\english-thyme.jpg" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\facebook2.png" />
+    <Content Include="Images\facebook3.png" />
+    <Content Include="Images\facebook4.png" />
+    <Content Include="Images\google2.png" />
+    <Content Include="Images\googleSocial.png" />
     <Content Include="Images\joanna-kosinska-127887.jpg" />
     <Content Include="Images\krista-mcphee-343974.jpg" />
     <Content Include="Images\Logomakr_6uFvk0.png" />
@@ -310,6 +316,8 @@
     <Content Include="Images\thyme2.jpg" />
     <Content Include="Images\toa-heftiba-134256.jpg" />
     <Content Include="Images\tobias-van-schneider-88137.jpg" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\twitter2.png" />
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>

@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<CookingSite.Models.Term>
 @using Microsoft.AspNet.Identity;
+@*The following script receives an item id and the current user id from
+    the system, creats a JSON object and passes the object to 
+    the SetFav() method in the TermsController*@
 <script>
     var userInput1 = " ";
     var aspId;
@@ -30,6 +33,9 @@
         });
     });
 </script>
+
+@*This script will show favorited item if the user in logged in and hide if not*@
+
 <script>
     var aspName = "@HttpContext.Current.User.Identity.GetUserName()";
 
@@ -43,10 +49,11 @@
         }
     });
 </script>
+
+@*This scrpt calls the MakeFalse() method in the terms controller upon onload
+    ans sets the IsMached items to false;*@
 <script>
-    //$.get("/Term/MakeFalse", null, function () {
-    //    alert("they false")
-    //});
+ 
     var postFile = {
         userInput1: userInput1,
         aspId: aspId
@@ -61,34 +68,28 @@
         }
     });
 </script>
-@*<script>
-        var IsLike = @Terms.Select(x => x.IsLike);
-        $(function () {
-            if (IsLike == true) {
-                $('.SetFav').show()
-            } else {
-                $('.SetFav').hide()
-            }
-        });
-    </script>*@
+
 
 @*FIND TERMS Button*@
 <div class="container">
     <a href="~/Terms/Index" id="sendFile" class="waves-effect waves-light btn btn-large"><i class="material-icons right">search</i>Search New Recipe</a>
 </div>
 
-<div class="row">
+<div class="row container2">
     @foreach (var item in Model)
     {
         if (item.IsMatch.Equals(true))
         {
-            <div class="col s8 m4">
+            <div class="col s8 m4 card1">
                 <div class="card">
                     <div class="card-image">
                         <img class="picSize" src="@Html.DisplayFor(modelItem => item.TermPicture)">
                         <span class="card-title">@Html.DisplayFor(modelItem => item.TermName)</span>
                         <div class="SetFav login">
-                            @*<span class="tooltiptext">Add To Favorites</span>*@
+                            @*The following statment compares the current ItemID to a list generated in the Index method in 
+                                the Favorites controller. If the item is contained in the Favorties table in the database,
+                                the add favorites button is set to red. If not the add favorites button is set to green. If set to green,
+                                once selected the add favorites button will turn to red. *@
                             @if (ViewBag.Favorites.Contains(item.TermID))
                             {
                                 <span class="tooltiptext">Already Added</span>

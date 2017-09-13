@@ -449,7 +449,7 @@ namespace CookingSite.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Terms");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

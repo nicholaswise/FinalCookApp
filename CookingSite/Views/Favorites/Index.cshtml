@@ -1,25 +1,15 @@
 ﻿@model IEnumerable<CookingSite.Models.Favorite>
 @using Microsoft.AspNet.Identity;
 <!DOCTYPE HTML>
-<script>
-    function AssignButtonClicked(elem) {
-        var $inputText = $('#userInput')
-        function myFunction() {
-            var elmnt = document.getElementById(userInput1);
-            elmnt.scrollIntoView();
-        }
-    }
-</script>
-<h2 style="font-family: Roboto, sans-serif;">My Favorites</h2>
-<form>
-    <input id="userInput" type="text" name="search" placeholder="Search Favorites">
-</form>
-<div class="row">
+
+<h3 style="font-family: Roboto, sans-serif; font-weight: 300;">My Favorites</h3>
+
+<div class="row container2">
     @foreach (var item in Model)
     {
         if (item.AspNetUser.Email == @HttpContext.Current.User.Identity.Name)
         {
-            <div class="col s8 m4">
+            <div class="col s8 m4 card1">
                 <div class="card">
                     <div class="card-image">
                         <img class="picSize" src="@Html.DisplayFor(modelItem => item.Term.TermPicture)">

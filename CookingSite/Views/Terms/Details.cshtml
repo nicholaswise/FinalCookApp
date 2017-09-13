@@ -20,8 +20,8 @@
         </div>
         <div class="card-action">
             <a href="@Html.DisplayFor(model => model.TermVideo)" target="_blank">Video</a>
-            <a class="goBack">Back</a>
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Favorites", "Index", "Favorites")
+            @Html.ActionLink("Home", "Index")
             @Html.ActionLink("Edit","Edit", new { id = Model.TermID })
         </div>
     </div>

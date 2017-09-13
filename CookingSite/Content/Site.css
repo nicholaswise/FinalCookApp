@@ -13,19 +13,54 @@ body {
     text-decoration-color: white;
     min-height: 100%;
 }
+
 .page-footer {
     margin-top: 100px;
     background-color: #2E2D30 !important;
     padding-top: 0px !important;
     position: absolute;
-
 }
+
 #Google.btn.btn-default {
     padding: 5px 5px 5px 5px !important;
+    background-image: url('../Images/google2.png');
+    background-size: cover;
+    border-radius: 50%;
+    min-height: 77px;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    box-shadow: none;
 }
+
+#Facebook.btn.btn-default {
+    padding: 5px 5px 5px 5px !important;
+    background-image: url('../Images/facebook4.png');
+    background-size: cover;
+    border-radius: 50%;
+    min-height: 95px;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#Twitter.btn.btn-default {
+    padding: 5px 5px 5px 5px !important;
+    background-image: url('../Images/twitter2.png');
+    background-size: cover;
+    border-radius: 50%;
+    min-height: 77px;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
 .control-label {
     color: gray !important;
 }
+
 .topGlyphs {
     margin-top: 40px;
 }
@@ -60,17 +95,20 @@ body {
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
+
 .navbar-right {
     margin-top: 5px;
 }
-.navbar-right > li > a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12pt;
-}
-.navbar-right > li > a:hover {
-    background-color: white;
-    opacity: .5;
-}
+
+    .navbar-right > li > a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12pt;
+    }
+
+        .navbar-right > li > a:hover {
+            background-color: white;
+            opacity: .5;
+        }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -91,9 +129,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .card-title {
     text-shadow: 1px 1px 8px black;
 }
+
 .detailsStyle {
     max-width: 500px;
     height: auto;
@@ -106,41 +146,44 @@ textarea {
 }
 
 .navbar-brand-logo {
-    font-family: 'Oleo Script', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     color: white !important;
     font-size: 3em;
-    opacity: 1 !important;
 }
-.navbar-brand-logo:hover {
-    text-decoration: none;
-    color: white !important;
-    opacity: .5 !important;
-}
+
+    .navbar-brand-logo:hover {
+        text-decoration: none;
+        color: white !important;
+        opacity: .5 !important;
+    }
+
 .navbar-inverse {
-    background-color: black;
+    background-color: transparent;
     border: none;
     position: relative;
     padding-bottom: 0px;
     padding-top: 0px;
     margin-top: 0px;
-    opacity: .5;
 }
 
 .glyphicon-search:before, .glyphicon-hand-down:before, .glyphicon-book:before {
     color: white;
     font-size: 40px;
 }
-.glyphicon-book:hover{
+
+.glyphicon-book:hover {
     opacity: .5;
 }
+
 #bgIcon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 4px solid white;
-  color: white;
-  display: inline-table;
-  text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid white;
+    color: white;
+    display: inline-table;
+    text-align: center;
 }
 
 td {
@@ -197,6 +240,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     font-family: 'Open Sans', sans-serif;
 }
+
 th {
     color: white;
 }
@@ -239,7 +283,6 @@ a.waves-effect.waves-light.btn.btn-large {
     }
 
         .SetFav .tooltiptext::after {
-            content: " ";
             position: absolute;
             top: 100%; /* At the bottom of the tooltip */
             left: 50%;
@@ -258,11 +301,38 @@ a.waves-effect.waves-light.btn.btn-large {
 }
 #reset.waves-button-input:hover {
     color: white !important;
-    background-color: #2BBBAD;
 }
+#reset.waves-button-input-wrapper {
+    color: #2BBBAD;
+}
+
+    #reset.waves-button-input-wrapper:hover {
+        color: white !important;
+        background-color: #2BBBAD;
+    }
+
 #Email.form-control, #Password.form-control, #ConfirmPassword.form-control {
     color: gray !important;
 }
-.login{
-    display:none;
+
+.login {
+    display: none;
 }
+
+.container2 {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    min-height: 300px;
+}
+
+.card1 {
+    margin-left: 0px !important;
+}
+.noShadow {
+    text-shadow: none;
+}
+
+

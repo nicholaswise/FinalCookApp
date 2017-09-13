@@ -16,7 +16,7 @@
             <form>
                 <div class="card-content">
                     <i class="material-icons" style="font-size: 50px;">account_circle</i>
-                    <span class="card-title">Login</span>
+                    <span class="card-title noShadow">Login</span>
                     <div class="row">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="input-field col s12">
@@ -42,7 +42,7 @@
             <section id="socialLoginForm">
                 @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
             </section>
-            <p>
+            <p style="padding:10px">
                 @Html.ActionLink("Register as a new user", "Register")
             </p>
         </center>

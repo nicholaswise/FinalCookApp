@@ -4,7 +4,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
+@*The following script receives the recipe from the customer, creates a JSON object and sends 
+    that object to a GetKey() method in the terms controller*@
 
 <script>
 
@@ -57,7 +58,8 @@
     </div>
 
     @*Recipe Entry Field*@
-    <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Copy + Paste Recipe Here"></textarea>
+        
+        <textarea id="inputText" class='autoExpand' rows='3' data-min-rows='3' title='Paste Recipe Here' placeholder="Follow the link to find a new recipe, enter your own, or search single cooking terms"></textarea>
 
     @*FIND TERMS Button*@
     <div class="container">
@@ -67,57 +69,4 @@
 
 
 </body>
-@*<div class="container">
-        <div class="col-md-4">
-            <h1>Upload Recipe</h1>
-            <input type="text" id="inputText" />
-            <button id="sendFile">Check Your Recipe</button>
-        </div>
-    </div>
-    <div class="col-md-4" id="UploadedFile">
 
-    </div>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TermName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TermDef)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TermInfo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TermPicture)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TermVideo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsMatch)
-            </th>
-            <th></th>
-        </tr>
-
-
-
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <div class="SetFav">
-                    <input class="" type="button" value="Assign"  />
-                </div>
-
-            </td>
-        </tr>
-        }
-        }
-    </table>*@
